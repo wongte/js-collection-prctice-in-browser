@@ -1,5 +1,8 @@
 'use strict';
 
 function createUpdatedCollection(collectionA, objectB) {
-  return 'Implement the practice require, and begin changing code in this row';
+  return collectionA.map((val) => ({
+    count: objectB.value.includes(val.key) ? val.count - parseInt(val.count / 3) : val.count,
+    key: val.key
+  }))
 }
