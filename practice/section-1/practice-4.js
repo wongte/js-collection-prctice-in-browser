@@ -1,5 +1,5 @@
 'use strict';
 
 function collectSameElements(collectionA, objectB) {
-  return collectionA.filter((val) => objectB.value.includes(val.key)).map((val) => val.key)
+  return collectionA.filter((itemA) => objectB.value.includes(itemA.key)).map((itemA) => itemA.key)
 }

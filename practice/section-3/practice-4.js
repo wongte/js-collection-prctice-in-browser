@@ -1,12 +1,12 @@
 'use strict';
 
 function createUpdatedCollection(collectionA, objectB) {
-  const counter = collectionA.reduce((count, val) => {
+  const counter = collectionA.reduce((count, itemA) => {
     let key, localcount
-    if (val.includes('-')) {
-      [key, localcount] = val.split('-')
+    if (itemA.includes('-')) {
+      [key, localcount] = itemA.split('-')
     } else {
-      key = val
+      key = itemA
       localcount = 1
     }
     count[key] = count[key] ? count[key] + localcount : localcount
@@ -16,8 +16,8 @@ function createUpdatedCollection(collectionA, objectB) {
     key,
     count: counter[key]
   }))
-  .map((val) => ({
-    count: objectB.value.includes(val.key) ? val.count - parseInt(val.count / 3) : val.count,
-    key: val.key
+  .map((itemA) => ({
+    count: objectB.value.includes(itemA.key) ? itemA.count - parseInt(itemA.count / 3) : itemA.count,
+    key: itemA.key
   }))
 }

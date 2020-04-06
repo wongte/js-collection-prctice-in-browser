@@ -1,8 +1,8 @@
 'use strict';
 
 function createUpdatedCollection(collectionA, objectB) {
-  return collectionA.map((val) => ({
-    count: objectB.value.includes(val.key) ? val.count - 1 : val.count,
-    key: val.key
+  return collectionA.map((itemA) => ({
+    count: objectB.value.includes(itemA.key) ? itemA.count - 1 : itemA.count,
+    key: itemA.key
   }))
 }
